@@ -1,0 +1,288 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #141414;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 60px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #e50914;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #e50914;
+}
+
+/* AUTH PAGES */
+.auth-container {
+  width: 350px;
+  margin: 120px auto;
+  padding: 30px;
+  background-color: #000;
+  border-radius: 8px;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background-color: #f40612;
+}
+
+/* HOME */
+.home {
+  padding: 20px;
+}
+
+.section-title {
+  margin: 30px 0 10px;
+}
+
+/* MOVIE ROW (HOTSTAR STYLE) */
+.movie-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.movie-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+/* MOVIE CARD */
+.movie-card {
+  position: relative;
+  min-width: 180px;
+  height: 270px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.25);
+  z-index: 10;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* OVERLAY (ON SAME CARD) */
+.movie-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.3)
+  );
+  opacity: 0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+}
+
+/* OVERLAY TEXT */
+.movie-overlay h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.meta {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.rating {
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.desc {
+  font-size: 12px;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+/* WATCH BUTTON */
+.watch-btn {
+  background: #e50914;
+  border: none;
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.watch-btn:hover {
+  background: #ff1c1c;
+}
+
+/* MOVIE ROW */
+.movie-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+/* WRAPPER (KEY PART) */
+.movie-wrapper {
+  position: relative;
+  min-width: 180px;
+  height: 270px;
+}
+
+/* NORMAL CARD */
+.movie-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* POPUP CARD (HOTSTAR STYLE WITH ANIMATION) */
+.movie-popup-card {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 320px;
+  height: 360px;
+  background: #111;
+  border-radius: 12px;
+  display: flex;
+  z-index: 50;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+
+  /* animation setup */
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+
+  transition: 
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* SHOW POPUP ON HOVER */
+.movie-wrapper:hover .movie-popup-card {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+
+/* POPUP IMAGE */
+.movie-popup-card img {
+  width: 45%;
+  object-fit: cover;
+  border-radius: 12px 0 0 12px;
+}
+
+/* POPUP INFO */
+.popup-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.popup-info h3 {
+  margin-bottom: 6px;
+}
+
+.meta {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.rating {
+  margin: 6px 0;
+}
+
+.desc {
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+/* WATCH BUTTON */
+.watch-btn {
+  background: #e50914;
+  border: none;
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.watch-btn:hover {
+  background: #ff1c1c;
+}
