@@ -6,7 +6,8 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import MovieDetails from "./pages/MovieDetails";
 import Watch from "./pages/Watch";
-
+import Series from "./pages/Series";
+import Genres from "./pages/Genres";
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/watch/:id" element={<Watch />} />
-
+        <Route path="/genres/:genre" element={<Genres />} />
+        
       </Routes>
     </BrowserRouter>
   );

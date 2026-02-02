@@ -1,4 +1,4 @@
-/* GLOBAL */
+/* ================= GLOBAL ================= */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -6,7 +6,7 @@ body {
   color: white;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .navbar {
   height: 60px;
   background-color: #000;
@@ -36,7 +36,7 @@ body {
   color: #e50914;
 }
 
-/* AUTH PAGES */
+/* ================= AUTH ================= */
 .auth-container {
   width: 350px;
   margin: 120px auto;
@@ -73,7 +73,7 @@ body {
   background-color: #f40612;
 }
 
-/* HOME */
+/* ================= HOME ================= */
 .home {
   padding: 20px;
 }
@@ -82,7 +82,7 @@ body {
   margin: 30px 0 10px;
 }
 
-/* MOVIE ROW (HOTSTAR STYLE) */
+/* ================= MOVIE ROW ================= */
 .movie-row {
   display: flex;
   gap: 20px;
@@ -99,10 +99,18 @@ body {
   border-radius: 10px;
 }
 
-/* MOVIE CARD */
-.movie-card {
+/* ================= WRAPPER ================= */
+.movie-wrapper {
   position: relative;
   min-width: 180px;
+  height: 270px;
+  flex-shrink: 0;
+}
+
+/* ================= MOVIE / SERIES CARD ================= */
+.movie-card {
+  position: relative;
+  width: 180px;
   height: 270px;
   border-radius: 10px;
   overflow: hidden;
@@ -122,7 +130,7 @@ body {
   object-fit: cover;
 }
 
-/* OVERLAY (ON SAME CARD) */
+/* ================= OVERLAY (ON CARD) ================= */
 .movie-overlay {
   position: absolute;
   inset: 0;
@@ -143,7 +151,7 @@ body {
   opacity: 1;
 }
 
-/* OVERLAY TEXT */
+/* ================= OVERLAY TEXT ================= */
 .movie-overlay h3 {
   font-size: 16px;
   margin-bottom: 4px;
@@ -151,7 +159,7 @@ body {
 
 .meta {
   font-size: 12px;
-  color: #ccc;
+  color: #aaa;
 }
 
 .rating {
@@ -165,7 +173,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* WATCH BUTTON */
+/* ================= WATCH BUTTON ================= */
 .watch-btn {
   background: #e50914;
   border: none;
@@ -179,36 +187,7 @@ body {
   background: #ff1c1c;
 }
 
-/* MOVIE ROW */
-.movie-row {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-}
-
-/* WRAPPER (KEY PART) */
-.movie-wrapper {
-  position: relative;
-  min-width: 180px;
-  height: 270px;
-}
-
-/* NORMAL CARD */
-.movie-card {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #000;
-}
-
-.movie-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* POPUP CARD (HOTSTAR STYLE WITH ANIMATION) */
+/* ================= POPUP CARD ================= */
 .movie-popup-card {
   position: absolute;
   top: -20px;
@@ -221,32 +200,27 @@ body {
   z-index: 50;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
 
-  /* animation setup */
   opacity: 0;
   transform: scale(0.9);
   pointer-events: none;
 
-  transition: 
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* SHOW POPUP ON HOVER */
 .movie-wrapper:hover .movie-popup-card {
   opacity: 1;
   transform: scale(1);
   pointer-events: auto;
 }
 
-
-/* POPUP IMAGE */
+/* ================= POPUP IMAGE ================= */
 .movie-popup-card img {
   width: 45%;
   object-fit: cover;
   border-radius: 12px 0 0 12px;
 }
 
-/* POPUP INFO */
+/* ================= POPUP INFO ================= */
 .popup-info {
   padding: 15px;
   display: flex;
@@ -257,32 +231,90 @@ body {
 .popup-info h3 {
   margin-bottom: 6px;
 }
-
-.meta {
-  font-size: 12px;
-  color: #aaa;
+/* ================= GENRES ================= */
+.genres-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
-.rating {
-  margin: 6px 0;
-}
-
-.desc {
-  font-size: 13px;
-  color: #ccc;
-  margin-bottom: 10px;
-}
-
-/* WATCH BUTTON */
-.watch-btn {
-  background: #e50914;
+.genre-btn {
+  padding: 8px 18px;
+  background: #222;
   border: none;
-  padding: 8px;
   color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
+  transition: background 0.25s ease;
 }
 
-.watch-btn:hover {
-  background: #ff1c1c;
+.genre-btn:hover {
+  background: #e50914;
+}
+
+.genre-btn.active {
+  background: #e50914;
+}
+/* ================= SCROLL ARROWS ================= */
+
+.row-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Arrow buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 200;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Left arrow */
+.scroll-left {
+  left: 0;
+}
+
+/* Right arrow */
+.scroll-right {
+  right: 0;
+}
+
+/* Hover effect */
+.scroll-btn:hover {
+  background: rgba(229, 9, 20, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Push movie row so arrows don’t overlap cards */
+.row-wrapper .movie-row {
+  padding: 0 60px;
+}
+
+/* ================= FIX ARROW VISIBILITY ================= */
+
+/* Allow arrows to be visible */
+.row-wrapper {
+  overflow: visible;
+}
+
+/* Ensure movie row does NOT hide arrows */
+.movie-row {
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+/* Force arrows above cards */
+.scroll-btn {
+  z-index: 9999;
 }

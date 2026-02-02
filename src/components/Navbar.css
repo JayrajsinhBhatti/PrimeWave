@@ -1,0 +1,79 @@
+.navbar {
+  height: 60px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #e50914;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #e50914;
+}
+
+/* GENRE DROPDOWN */
+.genre-dropdown {
+  position: relative;
+}
+
+.genre-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* FIXED HOVER */
+.genre-btn:hover {
+  background: transparent;      
+  color: #e50914;             
+  border-color: #e50914;
+}
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #111;
+  border-radius: 6px;
+  width: 150px;
+  z-index: 999;
+}
+
+
+.dropdown-item {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background: #e50914;
+}
