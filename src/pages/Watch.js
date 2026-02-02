@@ -1,62 +1,61 @@
-import { useParams, Navigate } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import React from "react";
+import { useParams, useLocation } from "react-router-dom";
+import { movies, series } from "../data/content";
 
 function Watch() {
-  const { user } = useContext(AuthContext);
   const { id } = useParams();
+  const location = useLocation();
 
-  //  Protect page: login required
-  if (!user) {
-    return <Navigate to="/login" />;
+  // 1️⃣ Try getting data from navigation state
+  let item = location.state;
+
+  // 2️⃣ If state is missing (refresh / direct URL), find by ID
+  if (!item) {
+    const allContent = [...movies, ...series];
+    item = allContent.find(i => i.id === Number(id));
   }
 
-  //  All 5 movies
-  const movies = {
-    1: {
-      title: "Inception",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-    2: {
-      title: "Interstellar",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-    3: {
-      title: "Avengers: Endgame",
-      video: "https://www.w3schools.com/html/movie.mp4",
-    },
-    4: {
-      title: "Joker",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-    5: {
-      title: "The Dark Knight",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-  };
-
-  const movie = movies[id];
-
-  //  Invalid movie ID
-  if (!movie) {
+  // 3️⃣ Still not found → real error
+  if (!item) {
     return (
-      <h2 style={{ padding: "40px", textAlign: "center" }}>
-        Movie not found
-      </h2>
+      <div className="home">
+        <h2>❌ Content Not Found</h2>
+      </div>
     );
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2 style={{ marginBottom: "20px" }}>{movie.title}</h2>
+    <div className="home">
+      <h2 className="section-title">{item.title}</h2>
 
-      <video
-        src={movie.video}
-        controls
-        autoPlay
-        width="100%"
-        style={{ borderRadius: "10px" }}
-      />
+      <div style={{ display: "flex", gap: "30px", marginTop: "20px" }}>
+        <img
+          src={item.image}
+          alt={item.title}
+          style={{
+            width: "300px",
+            borderRadius: "12px"
+          }}
+        />
+
+        <div>
+          <p><strong>Year:</strong> {item.year}</p>
+          <p>
+            <strong>
+              {item.duration ? "Duration" : "Seasons"}:
+            </strong>{" "}
+            {item.duration || item.seasons}
+          </p>
+          <p><strong>Rating:</strong> ⭐ {item.rating}</p>
+          <p style={{ maxWidth: "600px", marginTop: "10px" }}>
+            {item.description}
+          </p>
+
+          <button className="watch-btn" style={{ marginTop: "20px" }}>
+            ▶ Play
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

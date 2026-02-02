@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { movies, series } from "../data/content";
 
 function Home() {
+  const navigate = useNavigate();
   const moviesRef = useRef(null);
   const seriesRef = useRef(null);
 
@@ -9,6 +11,12 @@ function Home() {
     if (!ref.current) return;
     const amount = direction === "left" ? -600 : 600;
     ref.current.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
+  const handleWatch = (item, type) => {
+    navigate(`/watch/${item.id}`, {
+      state: { ...item, type }
+    });
   };
 
   return (
@@ -25,7 +33,7 @@ function Home() {
         </button>
 
         <div className="movie-row" ref={moviesRef}>
-          {movies.map((movie) => (
+          {movies.map(movie => (
             <div key={movie.id} className="movie-wrapper">
               <div className="movie-card">
                 <img src={movie.image} alt={movie.title} />
@@ -40,7 +48,12 @@ function Home() {
                   </p>
                   <p className="rating">⭐ {movie.rating}</p>
                   <p className="desc">{movie.description}</p>
-                  <button className="watch-btn">▶ Watch Now</button>
+                  <button
+                    className="watch-btn"
+                    onClick={() => handleWatch(movie, "movie")}
+                  >
+                    ▶ Watch Now
+                  </button>
                 </div>
               </div>
             </div>
@@ -67,7 +80,7 @@ function Home() {
         </button>
 
         <div className="movie-row" ref={seriesRef}>
-          {series.map((show) => (
+          {series.map(show => (
             <div key={show.id} className="movie-wrapper">
               <div className="movie-card">
                 <img src={show.image} alt={show.title} />
@@ -82,7 +95,12 @@ function Home() {
                   </p>
                   <p className="rating">⭐ {show.rating}</p>
                   <p className="desc">{show.description}</p>
-                  <button className="watch-btn">▶ Watch Now</button>
+                  <button
+                    className="watch-btn"
+                    onClick={() => handleWatch(show, "series")}
+                  >
+                    ▶ Watch Now
+                  </button>
                 </div>
               </div>
             </div>

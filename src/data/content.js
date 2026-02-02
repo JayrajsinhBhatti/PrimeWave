@@ -145,7 +145,7 @@ export const movies = [
     duration: "2h 29m",
     rating: 8.1,
     genre: "Thriller",
-    image: "https://image.tmdb.org/t/p/w500/gdiLTof3rbPDAmPaCf4g6op46bj.jpg",
+    image: "https://images.moviesanywhere.com/6e8e95bd0c1cabe58dc2ae73e20ef0c9/4d48b9a3-e996-4c38-92d6-b6444e88f15e.jpg",
     description: "A man becomes the suspect in his wife's disappearance."
   },
   {
@@ -190,7 +190,7 @@ export const movies = [
     seasons: "2 Seasons",
     rating: 8.6,
     genre: "Crime",
-    image: "https://image.tmdb.org/t/p/w500/6GkKzdNosVAL7UGgwTtYMq9hU0W.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUyNqtLzjenczVDkPi01RB5vvcq1npSxdFDA&s",
     description: "Profiling serial killers in the early FBI days."
   },
 
