@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { movies, series } from "../data/content";
+import { movies, series } from "../../../config/content";
 
 function Watch() {
   const { id } = useParams();

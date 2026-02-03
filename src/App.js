@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Home from "./features/movies/components/Home";
+import Login from "./features/auth/components/Login";
+import Register from "./features/auth/components/Register";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import MovieDetails from "./pages/MovieDetails";
-import Watch from "./pages/Watch";
-import Series from "./pages/Series";
-import Genres from "./pages/Genres";
+import Navbar from "./layouts/Navbar";
+import MovieDetails from "./features/movies/components/MovieDetails";
+import Watch from "./features/movies/components/Watch";
+import Series from "./features/movies/components/Series";
+import Genres from "./features/movies/components/Genres";
 
 
 function App() {

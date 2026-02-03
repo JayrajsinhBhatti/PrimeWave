@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { movies, series } from "../data/content";
+import { movies, series } from "../../../config/content";
 
 function Genres() {
   const { genre } = useParams();
 
-  const filteredMovies = movies.filter(m => m.genre === genre);
-  const filteredSeries = series.filter(s => s.genre === genre);
+  const filteredMovies = genre!=="All" ? movies.filter(m => m.genre === genre) : movies;
+  const filteredSeries = genre!=="All" ? series.filter(s => s.genre === genre) : series;
 
   return (
     <div className="home">
