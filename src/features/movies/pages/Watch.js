@@ -1,6 +1,6 @@
 import { useParams, Navigate } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 function Watch() {
   const { user } = useContext(AuthContext);

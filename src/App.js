@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import "./App.css";
-import Navbar from "./components/Navbar";
-import MovieDetails from "./pages/MovieDetails";
-import Watch from "./pages/Watch";
+import Home from "./features/movies/pages/Home";
+import Login from "./features/auth/pages/Login";
+import Register from "./features/auth/pages/Register";
+import "./styles/App.css";
+import Navbar from "./components/layout/Navbar";
+import MovieDetails from "./features/movies/pages/MovieDetails";
+import Watch from "./features/movies/pages/Watch";
 
 
 
