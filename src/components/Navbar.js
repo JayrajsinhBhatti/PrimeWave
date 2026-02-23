@@ -6,7 +6,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  const genres = ["Action", "Sci-Fi", "Crime", "Drama", "Thriller"];
+  const genres = ["All", "Action", "Sci-Fi", "Crime", "Drama", "Thriller"];
 
   const handleGenreClick = (genre) => {
     setOpen(false);

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { movies, series } from "../../../config/content";
 
@@ -6,6 +6,7 @@ function Home() {
   const navigate = useNavigate();
   const moviesRef = useRef(null);
   const seriesRef = useRef(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const scroll = (ref, direction) => {
     if (!ref.current) return;
@@ -19,8 +20,27 @@ function Home() {
     });
   };
 
+  const filteredMovies = searchQuery
+    ? movies.filter(m => m.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    : movies;
+
+  const filteredSeries = searchQuery
+    ? series.filter(s => s.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    : series;
+
   return (
     <div className="home">
+      {/* ================= SEARCH BAR ================= */}
+      <div className="search-bar-container">
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="Search movies and series..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+
       {/* ================= MOVIES ================= */}
       <h2 className="section-title">Movies</h2>
 
@@ -33,7 +53,7 @@ function Home() {
         </button>
 
         <div className="movie-row" ref={moviesRef}>
-          {movies.map(movie => (
+          {filteredMovies.map(movie => (
             <div key={movie.id} className="movie-wrapper">
               <div className="movie-card">
                 <img src={movie.image} alt={movie.title} />
@@ -80,7 +100,7 @@ function Home() {
         </button>
 
         <div className="movie-row" ref={seriesRef}>
-          {series.map(show => (
+          {filteredSeries.map(show => (
             <div key={show.id} className="movie-wrapper">
               <div className="movie-card">
                 <img src={show.image} alt={show.title} />
