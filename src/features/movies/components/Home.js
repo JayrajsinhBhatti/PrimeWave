@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { movies, series } from "../../../config/content";
+import { movies, series } from "../../../data/content";
 
 function Home() {
   const navigate = useNavigate();
@@ -13,11 +13,9 @@ function Home() {
     ref.current.scrollBy({ left: amount, behavior: "smooth" });
   };
 
-  const handleWatch = (item, type) => {
-    navigate(`/watch/${item.id}`, {
-      state: { ...item, type }
-    });
-  };
+  const handleWatch = (item) => {
+  navigate(`/movie/${item.id}`);
+};
 
   return (
     <div className="home">
@@ -50,7 +48,7 @@ function Home() {
                   <p className="desc">{movie.description}</p>
                   <button
                     className="watch-btn"
-                    onClick={() => handleWatch(movie, "movie")}
+                    onClick={() => handleWatch(movie)}
                   >
                     ▶ Watch Now
                   </button>
@@ -97,7 +95,7 @@ function Home() {
                   <p className="desc">{show.description}</p>
                   <button
                     className="watch-btn"
-                    onClick={() => handleWatch(show, "series")}
+                    onClick={() => handleWatch(show)}
                   >
                     ▶ Watch Now
                   </button>

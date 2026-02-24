@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { movies, series } from "../../../config/content";
+import { movies, series } from "../../../data/content";
 
 function Genres() {
   const { genre } = useParams();

@@ -1,60 +1,58 @@
 import React from "react";
-import { useParams, useLocation } from "react-router-dom";
-import { movies, series } from "../../../config/content";
+import { useParams, useNavigate } from "react-router-dom";
+import { movies, series } from "../../../data/content";
 
 function Watch() {
   const { id } = useParams();
-  const location = useLocation();
+  const navigate = useNavigate();
 
-  // 1️⃣ Try getting data from navigation state
-  let item = location.state;
+  const allContent = [...movies, ...series];
 
-  // 2️⃣ If state is missing (refresh / direct URL), find by ID
-  if (!item) {
-    const allContent = [...movies, ...series];
-    item = allContent.find(i => i.id === Number(id));
-  }
+  const item = allContent.find(
+    (content) => content.id === Number(id)
+  );
 
-  // 3️⃣ Still not found → real error
   if (!item) {
     return (
-      <div className="home">
-        <h2>❌ Content Not Found</h2>
+      <div style={{ padding: "20px" }}>
+        <h2>Video not found</h2>
       </div>
     );
   }
 
   return (
-    <div className="home">
-      <h2 className="section-title">{item.title}</h2>
+    <div style={{ background: "black", minHeight: "100vh", padding: "20px" }}>
+      <button
+        onClick={() => navigate(-1)}
+        style={{
+          background: "#e50914",
+          border: "none",
+          padding: "8px 12px",
+          color: "white",
+          borderRadius: "5px",
+          cursor: "pointer"
+        }}
+      >
+        ← Back
+      </button>
 
-      <div style={{ display: "flex", gap: "30px", marginTop: "20px" }}>
-        <img
-          src={item.image}
-          alt={item.title}
+      <h2 style={{ color: "white", marginTop: "20px" }}>
+        {item.title}
+      </h2>
+
+      <div style={{ marginTop: "20px" }}>
+        <video
+          controls
+          autoPlay
           style={{
-            width: "300px",
-            borderRadius: "12px"
+            width: "80%",
+            maxHeight: "80vh",
+            borderRadius: "10px"
           }}
-        />
-
-        <div>
-          <p><strong>Year:</strong> {item.year}</p>
-          <p>
-            <strong>
-              {item.duration ? "Duration" : "Seasons"}:
-            </strong>{" "}
-            {item.duration || item.seasons}
-          </p>
-          <p><strong>Rating:</strong> ⭐ {item.rating}</p>
-          <p style={{ maxWidth: "600px", marginTop: "10px" }}>
-            {item.description}
-          </p>
-
-          <button className="watch-btn" style={{ marginTop: "20px" }}>
-            ▶ Play
-          </button>
-        </div>
+        >
+          <source src={item.video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   );

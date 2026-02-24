@@ -4,39 +4,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #141414;
   color: white;
+  overflow: visible;   /* VERY IMPORTANT */
+  position: relative;
 }
 
-/* ================= NAVBAR ================= */
-.navbar {
-  height: 60px;
-  background-color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.logo {
-  color: #e50914;
-  font-size: 24px;
-  font-weight: bold;
-  align-items: center;
-  display: flex;
-}
-
-.nav-links a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.nav-links a:hover {
-  color: #e50914;
-}
 
 /* ================= AUTH ================= */
 .auth-container {
@@ -78,6 +49,8 @@ body {
 /* ================= HOME ================= */
 .home {
   padding: 20px;
+  overflow: visible;   /* VERY IMPORTANT */
+  position: relative;
 }
 
 .section-title {
@@ -91,7 +64,7 @@ body {
   gap: 20px;
   overflow-x: auto;
   min-height: 27em;
-  overflow-y: hidden;
+  overflow-y: visible;
   padding-bottom: 20px;
 }
 
@@ -306,21 +279,3 @@ body {
   padding: 0 60px;
 }
 
-/* ================= FIX ARROW VISIBILITY ================= */
-
-/* Allow arrows to be visible */
-.row-wrapper {
-  display: flex;
-  overflow: visible;
-}
-
-/* Ensure movie row does NOT hide arrows */
-.movie-row {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-/* Force arrows above cards */
-.scroll-btn {
-  z-index: 9999;
-}
