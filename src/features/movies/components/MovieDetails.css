@@ -1,0 +1,39 @@
+.details-page {
+  background: #141414;
+  min-height: 100vh;
+  padding: 40px;
+  color: white;
+}
+
+.details-container {
+  display: flex;
+  gap: 40px;
+}
+
+.details-container img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.details-info {
+  max-width: 600px;
+}
+
+.details-info h1 {
+  margin-bottom: 10px;
+}
+
+.play-btn {
+  margin-top: 20px;
+  background: #e50914;
+  border: none;
+  padding: 12px 20px;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  background: #ff1c1c;
+}
