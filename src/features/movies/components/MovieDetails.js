@@ -1,64 +1,39 @@
-import { useParams } from "react-router-dom";
+import React from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { movies, series } from "../../../data/content";
+import "./MovieDetails.css";
 
 function MovieDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
-  const movies = [
-    {
-      id: 1,
-      title: "Inception",
-      image: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
-      description: "A mind-bending thriller about dreams within dreams."
-    },
-    {
-      id: 2,
-      title: "Interstellar",
-      image: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-      description: "A journey beyond the stars to save humanity."
-    },
-    {
-      id: 3,
-      title: "Avengers",
-      image: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
-      description: "Earth’s mightiest heroes unite to fight a global threat."
-    },
-    {
-      id: 4,
-      title: "Joker",
-      image: "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
-      description: "The dark origin story of Gotham’s most infamous villain."
-    },
-  ];
+  const allContent = [...movies, ...series];
+  const item = allContent.find((content) => content.id === Number(id));
 
-  const movie = movies.find(m => m.id === parseInt(id));
-
-  if (!movie) return <h2 style={{ padding: "40px" }}>Movie not found</h2>;
+  if (!item) {
+    return <h2 style={{ padding: "20px" }}>Movie not found</h2>;
+  }
 
   return (
-    <div style={{ padding: "40px", display: "flex", gap: "30px" }}>
-      <img
-        src={movie.image}
-        alt={movie.title}
-        style={{ width: "300px", borderRadius: "10px" }}
-      />
+    <div className="details-page">
+      <div className="details-container">
+        <img src={item.image} alt={item.title} />
 
-      <div>
-        <h1>{movie.title}</h1>
-        <p style={{ maxWidth: "500px", lineHeight: "1.6" }}>
-          {movie.description}
-        </p>
-        <button
-          style={{
-            padding: "10px 20px",
-            background: "#e50914",
-            border: "none",
-            color: "white",
-            borderRadius: "5px",
-            cursor: "pointer"
-          }}
-        >
-          Watch Now
-        </button>
+        <div className="details-info">
+          <h1>{item.title}</h1>
+          <p className="meta">
+            {item.year} • {item.duration || item.seasons}
+          </p>
+          <p className="rating">⭐ {item.rating}</p>
+          <p className="desc">{item.description}</p>
+
+          <button
+            className="play-btn"
+            onClick={() => navigate(`/watch/${item.id}`)}
+          >
+            ▶ Play
+          </button>
+        </div>
       </div>
     </div>
   );

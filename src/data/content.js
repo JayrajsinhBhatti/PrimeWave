@@ -8,7 +8,8 @@ export const movies = [
     rating: 8.8,
     genre: "Sci-Fi",
     image: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
-    description: "A thief steals secrets through dream-sharing technology."
+    description: "A thief steals secrets through dream-sharing technology.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 2,
@@ -18,7 +19,8 @@ export const movies = [
     rating: 8.6,
     genre: "Sci-Fi",
     image: "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
-    description: "Explorers travel through a wormhole to save humanity."
+    description: "Explorers travel through a wormhole to save humanity.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ export const movies = [
     rating: 8.7,
     genre: "Sci-Fi",
     image: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
-    description: "A hacker discovers reality is a simulation."
+    description: "A hacker discovers reality is a simulation.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
 
   // ===== ACTION =====
@@ -40,7 +43,8 @@ export const movies = [
     rating: 9.0,
     genre: "Action",
     image: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-    description: "Batman faces the Joker."
+    description: "Batman faces the Joker.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 5,
@@ -50,7 +54,8 @@ export const movies = [
     rating: 8.4,
     genre: "Action",
     image: "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
-    description: "The Avengers assemble for one final battle."
+    description: "The Avengers assemble for one final battle.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 6,
@@ -60,7 +65,8 @@ export const movies = [
     rating: 8.1,
     genre: "Action",
     image: "https://image.tmdb.org/t/p/w500/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg",
-    description: "A high-octane chase in a post-apocalyptic wasteland."
+    description: "A high-octane chase in a post-apocalyptic wasteland.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
 
   // ===== CRIME =====
@@ -72,7 +78,8 @@ export const movies = [
     rating: 8.5,
     genre: "Crime",
     image: "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
-    description: "The origin of Gotham's most infamous villain."
+    description: "The origin of Gotham's most infamous villain.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 8,
@@ -82,7 +89,8 @@ export const movies = [
     rating: 8.5,
     genre: "Crime",
     image: "https://image.tmdb.org/t/p/w500/nT97ifVT2J1yMQmeq20Qblg61T.jpg",
-    description: "An undercover cop and a mole in the police try to expose each other."
+    description: "An undercover cop and a mole in the police try to expose each other.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 9,
@@ -92,7 +100,8 @@ export const movies = [
     rating: 8.3,
     genre: "Crime",
     image: "https://image.tmdb.org/t/p/w500/iQ5ztdjvteGeboxtmRdXEChJOHh.jpg",
-    description: "A Cuban immigrant rises in the Miami drug trade."
+    description: "A Cuban immigrant rises in the Miami drug trade.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
 
   // ===== DRAMA =====
@@ -104,7 +113,8 @@ export const movies = [
     rating: 8.8,
     genre: "Drama",
     image: "https://image.tmdb.org/t/p/w500/saHP97rTPS5eLmrLQEcANmKrsFl.jpg",
-    description: "A simple man witnesses extraordinary events."
+    description: "A simple man witnesses extraordinary events.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 11,
@@ -114,7 +124,8 @@ export const movies = [
     rating: 9.3,
     genre: "Drama",
     image: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
-    description: "Hope and friendship inside a prison."
+    description: "Hope and friendship inside a prison.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 12,
@@ -124,7 +135,8 @@ export const movies = [
     rating: 8.8,
     genre: "Drama",
     image: "https://image.tmdb.org/t/p/w500/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg",
-    description: "An underground fight club spirals out of control."
+    description: "An underground fight club spirals out of control.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
 
   // ===== THRILLER =====
@@ -136,7 +148,8 @@ export const movies = [
     rating: 8.6,
     genre: "Thriller",
     image: "https://image.tmdb.org/t/p/w500/6yoghtyTpznpBik8EngEmJskVUO.jpg",
-    description: "A serial killer uses the seven deadly sins."
+    description: "A serial killer uses the seven deadly sins.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 14,
@@ -146,7 +159,8 @@ export const movies = [
     rating: 8.1,
     genre: "Thriller",
     image: "https://images.moviesanywhere.com/6e8e95bd0c1cabe58dc2ae73e20ef0c9/4d48b9a3-e996-4c38-92d6-b6444e88f15e.jpg",
-    description: "A man becomes the suspect in his wife's disappearance."
+    description: "A man becomes the suspect in his wife's disappearance.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 15,
@@ -156,7 +170,8 @@ export const movies = [
     rating: 8.2,
     genre: "Thriller",
     image: "https://image.tmdb.org/t/p/w500/kve20tXwUZpu4GUX8l6X7Z4jmL6.jpg",
-    description: "A U.S. Marshal investigates a psychiatric facility."
+    description: "A U.S. Marshal investigates a psychiatric facility.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   }
 ];
 
@@ -171,7 +186,8 @@ export const movies = [
     rating: 9.5,
     genre: "Crime",
     image: "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
-    description: "A chemistry teacher turns into a drug kingpin."
+    description: "A chemistry teacher turns into a drug kingpin.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 102,
@@ -181,7 +197,8 @@ export const movies = [
     rating: 8.8,
     genre: "Crime",
     image: "https://image.tmdb.org/t/p/w500/rTmal9fDbwh5F0waol2hq35U4ah.jpg",
-    description: "The rise and fall of Pablo Escobar."
+    description: "The rise and fall of Pablo Escobar.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 103,
@@ -191,7 +208,8 @@ export const movies = [
     rating: 8.6,
     genre: "Crime",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUyNqtLzjenczVDkPi01RB5vvcq1npSxdFDA&s",
-    description: "Profiling serial killers in the early FBI days."
+    description: "Profiling serial killers in the early FBI days.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
 
   // ===== THRILLER =====
@@ -203,7 +221,8 @@ export const movies = [
     rating: 8.2,
     genre: "Thriller",
     image: "https://image.tmdb.org/t/p/w500/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg",
-    description: "A criminal mastermind plans the biggest heist."
+    description: "A criminal mastermind plans the biggest heist.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 105,
@@ -213,7 +232,8 @@ export const movies = [
     rating: 8.8,
     genre: "Thriller",
     image: "https://image.tmdb.org/t/p/w500/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg",
-    description: "A time-travel mystery spanning generations."
+    description: "A time-travel mystery spanning generations.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 106,
@@ -223,7 +243,8 @@ export const movies = [
     rating: 7.8,
     genre: "Thriller",
     image: "https://image.tmdb.org/t/p/w500/9qZUrhcFVI9MNznVJxdfcrmifof.jpg",
-    description: "A charming man hides a dangerous obsession."
+    description: "A charming man hides a dangerous obsession.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
 
   // ===== SCI-FI =====
@@ -235,7 +256,8 @@ export const movies = [
     rating: 8.7,
     genre: "Sci-Fi",
     image: "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
-    description: "Kids uncover supernatural mysteries."
+    description: "Kids uncover supernatural mysteries.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 108,
@@ -245,7 +267,8 @@ export const movies = [
     rating: 8.5,
     genre: "Sci-Fi",
     image: "https://image.tmdb.org/t/p/w500/5zmiBoMzeeVdQ62no55JOJMY498.jpg",
-    description: "A sci-fi political thriller in space."
+    description: "A sci-fi political thriller in space.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 109,
@@ -255,6 +278,7 @@ export const movies = [
     rating: 8.6,
     genre: "Sci-Fi",
     image: "https://image.tmdb.org/t/p/w500/8MfgyFHf7XEboZJPZXCIDqqiz6e.jpg",
-    description: "An AI theme park goes terribly wrong."
+    description: "An AI theme park goes terribly wrong.",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   }
 ];
