@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# PrimeWave
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PrimeWave is a full-stack OTT-style web application with:
 
-## Available Scripts
+- React frontend for browsing movies and series, authentication screens, and media pages.
+- Node.js + Express backend for authentication and role-protected APIs.
+- PostgreSQL for user/admin data.
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+- Frontend: React, React Router, Axios
+- Backend: Node.js, Express, JWT, bcryptjs, pg
+- Database: PostgreSQL
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+PrimeWave/
+  backend/
+    app.js
+    db.js
+    middleware/
+    routes/
+  public/
+  src/
+    components/
+    features/
+    data/
+  package.json
+```
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js 18+
+- npm 9+
+- PostgreSQL 14+
 
-### `npm run build`
+## Environment Variables
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create these files from examples:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `/.env`
+- `/backend/.env`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Backend variables (`backend/.env`):
 
-### `npm run eject`
+```
+PORT=5000
+DATABASE_URL=postgres://username:password@localhost:5432/primewave
+JWT_SECRET=replace_with_a_secure_secret
+TOKEN_EXPIRES_IN=24h
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Database Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create the database and required tables in PostgreSQL:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```sql
+CREATE DATABASE primewave;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+\c primewave;
 
-## Learn More
+CREATE TABLE IF NOT EXISTS users (
+  user_id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  phone VARCHAR(20),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  status VARCHAR(20) DEFAULT 'active'
+);
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+CREATE TABLE IF NOT EXISTS admins (
+  admin_id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Install
 
-### Code Splitting
+Install frontend dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm install
+```
 
-### Analyzing the Bundle Size
+Install backend dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+cd backend
+npm install
+```
 
-### Making a Progressive Web App
+## Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Run backend (Terminal 1):
 
-### Advanced Configuration
+```bash
+cd backend
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Run frontend (Terminal 2):
 
-### Deployment
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Frontend: `http://localhost:3000`
 
-### `npm run build` fails to minify
+Backend API base: `http://localhost:5000/api`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## API Overview
+
+Auth routes:
+
+- `POST /api/auth/register`
+- `POST /api/auth/admin/register`
+- `POST /api/auth/login`
+
+User route:
+
+- `GET /api/user/profile` (requires user JWT)
+
+Admin route:
+
+- `GET /api/admin/dashboard` (requires admin JWT)
+
+## Scripts
+
+Frontend (`/`):
+
+- `npm start`
+- `npm run build`
+- `npm test`
+
+Backend (`/backend`):
+
+- `npm start`
+- `npm run dev`
+
+## Notes
+
+- Generated logs and one-time DB bootstrap helper scripts were removed from version control.
+- Keep `.env` files local and never commit secrets.
